@@ -132,7 +132,7 @@ function getMatchRanking(testString, stringToRank, options) {
     return rankings.CASE_SENSITIVE_EQUAL
   }
 
-  const caseRank = typeof caseRankings[options.caseRanking] !== 'undefined' ? options.caseRanking : getCaseRanking(testString)
+  const caseRank = typeof options.caseRanking !== 'undefined' ? options.caseRanking : getCaseRanking(testString)
   const isPartial = isPartialOfCase(testString, stringToRank, caseRank)
   const isCasedAcronym = isCaseAcronym(testString, stringToRank, caseRank)
 
@@ -456,4 +456,4 @@ function getKeyAttributes(key) {
 }
 
 export default matchSorter
-export {rankings}
+export {rankings, caseRankings}
